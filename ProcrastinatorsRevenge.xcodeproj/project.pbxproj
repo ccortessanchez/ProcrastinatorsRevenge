@@ -7,35 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042C791D1B4C28F700B7048B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042C791C1B4C28F700B7048B /* Images.xcassets */; };
+		0446E2C71C032874002BF14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0446E2C61C032874002BF14E /* Main.storyboard */; };
 		0453071D1B4460370033613E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453071C1B4460370033613E /* AppDelegate.swift */; };
 		0453071F1B4460370033613E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453071E1B4460370033613E /* ViewController.swift */; };
-		045307221B4460370033613E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045307201B4460370033613E /* Main.storyboard */; };
-		045307241B4460370033613E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045307231B4460370033613E /* Images.xcassets */; };
 		045307271B4460370033613E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045307251B4460370033613E /* LaunchScreen.xib */; };
-		045307331B4460370033613E /* ProcrastinatorsRevengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045307321B4460370033613E /* ProcrastinatorsRevengeTests.swift */; };
+		0453073D1B4460880033613E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453073C1B4460880033613E /* MapKit.framework */; };
+		045307411B4460970033613E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045307401B4460970033613E /* UIKit.framework */; };
+		045307431B44609F0033613E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045307421B44609F0033613E /* CoreLocation.framework */; };
+		045307451B4461340033613E /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045307441B4461340033613E /* DirectionsViewController.swift */; };
+		045307491B446C040033613E /* AddressTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045307481B446C040033613E /* AddressTableView.swift */; };
+		046EAFCF1B48557500D431FF /* DirectionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EAFCE1B48557500D431FF /* DirectionsTableView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0453072D1B4460370033613E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0453070F1B4460370033613E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 045307161B4460370033613E;
-			remoteInfo = ProcrastinatorsRevenge;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		042C791C1B4C28F700B7048B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0446E2C61C032874002BF14E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		045307171B4460370033613E /* ProcrastinatorsRevenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProcrastinatorsRevenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0453071B1B4460370033613E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0453071C1B4460370033613E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0453071E1B4460370033613E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		045307211B4460370033613E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		045307231B4460370033613E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		045307261B4460370033613E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0453072C1B4460370033613E /* ProcrastinatorsRevengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProcrastinatorsRevengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		045307311B4460370033613E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		045307321B4460370033613E /* ProcrastinatorsRevengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcrastinatorsRevengeTests.swift; sourceTree = "<group>"; };
+		0453073C1B4460880033613E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		045307401B4460970033613E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		045307421B44609F0033613E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		045307441B4461340033613E /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
+		045307481B446C040033613E /* AddressTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableView.swift; sourceTree = "<group>"; };
+		046EAFCE1B48557500D431FF /* DirectionsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,13 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		045307291B4460370033613E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				045307431B44609F0033613E /* CoreLocation.framework in Frameworks */,
+				045307411B4460970033613E /* UIKit.framework in Frameworks */,
+				0453073D1B4460880033613E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +53,10 @@
 		0453070E1B4460370033613E = {
 			isa = PBXGroup;
 			children = (
+				045307421B44609F0033613E /* CoreLocation.framework */,
+				045307401B4460970033613E /* UIKit.framework */,
+				0453073C1B4460880033613E /* MapKit.framework */,
 				045307191B4460370033613E /* ProcrastinatorsRevenge */,
-				0453072F1B4460370033613E /* ProcrastinatorsRevengeTests */,
 				045307181B4460370033613E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				045307171B4460370033613E /* ProcrastinatorsRevenge.app */,
-				0453072C1B4460370033613E /* ProcrastinatorsRevengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,8 +74,11 @@
 			children = (
 				0453071C1B4460370033613E /* AppDelegate.swift */,
 				0453071E1B4460370033613E /* ViewController.swift */,
-				045307201B4460370033613E /* Main.storyboard */,
-				045307231B4460370033613E /* Images.xcassets */,
+				045307481B446C040033613E /* AddressTableView.swift */,
+				045307441B4461340033613E /* DirectionsViewController.swift */,
+				046EAFCE1B48557500D431FF /* DirectionsTableView.swift */,
+				0446E2C61C032874002BF14E /* Main.storyboard */,
+				042C791C1B4C28F700B7048B /* Images.xcassets */,
 				045307251B4460370033613E /* LaunchScreen.xib */,
 				0453071A1B4460370033613E /* Supporting Files */,
 			);
@@ -91,23 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				0453071B1B4460370033613E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0453072F1B4460370033613E /* ProcrastinatorsRevengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				045307321B4460370033613E /* ProcrastinatorsRevengeTests.swift */,
-				045307301B4460370033613E /* Supporting Files */,
-			);
-			path = ProcrastinatorsRevengeTests;
-			sourceTree = "<group>";
-		};
-		045307301B4460370033613E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				045307311B4460370033613E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,39 +113,20 @@
 			productReference = 045307171B4460370033613E /* ProcrastinatorsRevenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0453072B1B4460370033613E /* ProcrastinatorsRevengeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 045307391B4460370033613E /* Build configuration list for PBXNativeTarget "ProcrastinatorsRevengeTests" */;
-			buildPhases = (
-				045307281B4460370033613E /* Sources */,
-				045307291B4460370033613E /* Frameworks */,
-				0453072A1B4460370033613E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0453072E1B4460370033613E /* PBXTargetDependency */,
-			);
-			name = ProcrastinatorsRevengeTests;
-			productName = ProcrastinatorsRevengeTests;
-			productReference = 0453072C1B4460370033613E /* ProcrastinatorsRevengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0453070F1B4460370033613E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Standable Inc";
 				TargetAttributes = {
 					045307161B4460370033613E = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					0453072B1B4460370033613E = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 045307161B4460370033613E;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -182,7 +144,6 @@
 			projectRoot = "";
 			targets = (
 				045307161B4460370033613E /* ProcrastinatorsRevenge */,
-				0453072B1B4460370033613E /* ProcrastinatorsRevengeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,16 +153,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				045307221B4460370033613E /* Main.storyboard in Resources */,
+				042C791D1B4C28F700B7048B /* Images.xcassets in Resources */,
+				0446E2C71C032874002BF14E /* Main.storyboard in Resources */,
 				045307271B4460370033613E /* LaunchScreen.xib in Resources */,
-				045307241B4460370033613E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0453072A1B4460370033613E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,37 +167,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0453071F1B4460370033613E /* ViewController.swift in Sources */,
+				046EAFCF1B48557500D431FF /* DirectionsTableView.swift in Sources */,
+				045307451B4461340033613E /* DirectionsViewController.swift in Sources */,
+				045307491B446C040033613E /* AddressTableView.swift in Sources */,
 				0453071D1B4460370033613E /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		045307281B4460370033613E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				045307331B4460370033613E /* ProcrastinatorsRevengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		0453072E1B4460370033613E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 045307161B4460370033613E /* ProcrastinatorsRevenge */;
-			targetProxy = 0453072D1B4460370033613E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		045307201B4460370033613E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				045307211B4460370033613E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		045307251B4460370033613E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,6 +209,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -341,8 +275,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProcrastinatorsRevenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "StandableInc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -351,42 +288,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProcrastinatorsRevenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "StandableInc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		0453073A1B4460370033613E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ProcrastinatorsRevengeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProcrastinatorsRevenge.app/ProcrastinatorsRevenge";
-			};
-			name = Debug;
-		};
-		0453073B1B4460370033613E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ProcrastinatorsRevengeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProcrastinatorsRevenge.app/ProcrastinatorsRevenge";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -409,14 +315,7 @@
 				045307381B4460370033613E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		045307391B4460370033613E /* Build configuration list for PBXNativeTarget "ProcrastinatorsRevengeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0453073A1B4460370033613E /* Debug */,
-				0453073B1B4460370033613E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

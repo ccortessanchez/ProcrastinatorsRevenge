@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oah-tq-3cx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SbT-wh-2pW">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="oah-tq-3cx" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Eb-gU-7k9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="a3c-fS-Ewu" kind="relationship" relationship="rootViewController" id="fhK-XE-sqS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UaJ-Bi-aPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-305" y="280"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Svi-J5-7u5">
+            <objects>
+                <viewController id="a3c-fS-Ewu" customClass="ViewController" customModule="ProcrastinatorsRevenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xEm-5F-5dt"/>
+                        <viewControllerLayoutGuide type="bottom" id="lnN-2a-MnK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CWZ-ZH-Fr3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" placeholderIntrinsicWidth="223" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stop #1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4O-qV-365">
+                                <rect key="frame" x="29" y="293" width="213" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jC4-a0-wL5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a3c-fS-Ewu" id="jGI-hI-YXz"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" placeholderIntrinsicWidth="223" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stop #2 (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDl-Zp-24W">
+                                <rect key="frame" x="29" y="355" width="213" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7CJ-il-rDI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a3c-fS-Ewu" id="dTX-SM-R78"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculate the fastest round-trip route from your starting point, to up to 2 locations, and back." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="for-BY-keU">
+                                <rect key="frame" x="29" y="175" width="262" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7GW-qR-qSX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Italic" family="Hoefler Text" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIX-Vp-Yvh">
+                                <rect key="frame" x="251" y="230" width="48" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xjX-zm-lIE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
+                                <state key="normal" title="Enter" backgroundImage="red_button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="✓"/>
+                                <connections>
+                                    <action selector="addressEntered:" destination="a3c-fS-Ewu" eventType="touchUpInside" id="fyf-CG-0eK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H54-8W-llh">
+                                <rect key="frame" x="250" y="292" width="48" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="32h-gq-cYx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
+                                <state key="normal" title="Enter" backgroundImage="red_button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="✓"/>
+                                <state key="highlighted" title="✓"/>
+                                <connections>
+                                    <action selector="addressEntered:" destination="a3c-fS-Ewu" eventType="touchUpInside" id="rST-pK-Xz1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZN-p1-pvm">
+                                <rect key="frame" x="251" y="356" width="48" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JiK-SP-PFP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
+                                <state key="normal" title="Enter" backgroundImage="red_button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="✓"/>
+                                <state key="highlighted" title="✓"/>
+                                <connections>
+                                    <action selector="addressEntered:" destination="a3c-fS-Ewu" eventType="touchUpInside" id="Ks5-LC-jfV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHZ-0B-WMZ">
+                                <rect key="frame" x="112" y="427" width="96" height="36"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="y0Q-0w-ysk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                                <state key="normal" title="Route it!" backgroundImage="red_button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDirections:" destination="a3c-fS-Ewu" eventType="touchUpInside" id="wCG-fN-n5A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfK-Av-Fg9">
+                                <rect key="frame" x="120" y="325" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="↑↓">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="swapFields:" destination="a3c-fS-Ewu" eventType="touchUpInside" id="RxK-4n-hqL"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="q0l-Bx-5dS">
+                                <rect key="frame" x="62" y="20" width="196" height="147"/>
+                                <animations/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" placeholderIntrinsicWidth="222" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start/End Point" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ReU-ls-HIP">
+                                <rect key="frame" x="29" y="230" width="213" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lC1-6d-bTX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a3c-fS-Ewu" id="ntH-Xh-Ndd"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.8980392157" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="for-BY-keU" firstAttribute="top" secondItem="q0l-Bx-5dS" secondAttribute="bottom" constant="8" id="0eb-L0-PTy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q0l-Bx-5dS" secondAttribute="trailing" constant="46" id="3uF-ZI-fo1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EZN-p1-pvm" secondAttribute="trailing" constant="5" id="487-rm-KXi"/>
+                            <constraint firstItem="lHZ-0B-WMZ" firstAttribute="top" secondItem="cDl-Zp-24W" secondAttribute="bottom" constant="42" id="4x5-5S-QSQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ReU-ls-HIP" secondAttribute="trailing" constant="62" id="5sR-hL-dMT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hfK-Av-Fg9" secondAttribute="trailing" constant="154" id="64i-FI-NUS"/>
+                            <constraint firstItem="ReU-ls-HIP" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="13" id="7pH-Xl-NIK"/>
+                            <constraint firstItem="hfK-Av-Fg9" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="104" id="9KW-40-XKX"/>
+                            <constraint firstItem="cDl-Zp-24W" firstAttribute="top" secondItem="hfK-Av-Fg9" secondAttribute="bottom" id="9mD-SI-L0I"/>
+                            <constraint firstAttribute="centerX" secondItem="lHZ-0B-WMZ" secondAttribute="centerX" id="A6c-zQ-j0c"/>
+                            <constraint firstItem="EZN-p1-pvm" firstAttribute="leading" secondItem="cDl-Zp-24W" secondAttribute="trailing" constant="9" id="Ahu-dP-LFs"/>
+                            <constraint firstItem="q0l-Bx-5dS" firstAttribute="top" secondItem="bIX-Vp-Yvh" secondAttribute="top" constant="-210" id="E93-JR-BIg"/>
+                            <constraint firstItem="q0l-Bx-5dS" firstAttribute="top" secondItem="xEm-5F-5dt" secondAttribute="bottom" id="Hme-MM-hlV"/>
+                            <constraint firstItem="H54-8W-llh" firstAttribute="top" secondItem="bIX-Vp-Yvh" secondAttribute="bottom" constant="32" id="Hv8-yR-G0m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cDl-Zp-24W" secondAttribute="trailing" constant="62" id="JQn-TF-hFv"/>
+                            <constraint firstAttribute="centerX" secondItem="q0l-Bx-5dS" secondAttribute="centerX" id="KdC-JS-ctu"/>
+                            <constraint firstItem="hfK-Av-Fg9" firstAttribute="top" secondItem="M4O-qV-365" secondAttribute="bottom" constant="2" id="LVm-Id-IDI"/>
+                            <constraint firstItem="for-BY-keU" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="13" id="LfN-Ng-evN"/>
+                            <constraint firstItem="cDl-Zp-24W" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="13" id="Oe7-ak-ZjS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lHZ-0B-WMZ" secondAttribute="trailing" constant="96" id="RJd-Cs-3BA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bIX-Vp-Yvh" secondAttribute="trailing" constant="5" id="SaM-UK-YOv"/>
+                            <constraint firstItem="M4O-qV-365" firstAttribute="top" secondItem="ReU-ls-HIP" secondAttribute="bottom" constant="33" id="V92-1y-sGw"/>
+                            <constraint firstItem="bIX-Vp-Yvh" firstAttribute="leading" secondItem="ReU-ls-HIP" secondAttribute="trailing" constant="9" id="XEk-jQ-iXb"/>
+                            <constraint firstItem="EZN-p1-pvm" firstAttribute="top" secondItem="H54-8W-llh" secondAttribute="bottom" constant="34" id="Xna-Ws-gYm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M4O-qV-365" secondAttribute="trailing" constant="62" id="aXe-ZL-Bw8"/>
+                            <constraint firstItem="ReU-ls-HIP" firstAttribute="top" secondItem="q0l-Bx-5dS" secondAttribute="top" constant="210" id="dAm-C1-8RS"/>
+                            <constraint firstItem="bIX-Vp-Yvh" firstAttribute="top" secondItem="for-BY-keU" secondAttribute="bottom" constant="25" id="enD-Ic-2iG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="for-BY-keU" secondAttribute="trailing" constant="13" id="j0U-qZ-9z8"/>
+                            <constraint firstItem="M4O-qV-365" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="13" id="kxx-KO-2Aw"/>
+                            <constraint firstItem="q0l-Bx-5dS" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="46" id="ngf-uX-lle"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H54-8W-llh" secondAttribute="trailing" constant="6" id="tT5-Ue-SOn"/>
+                            <constraint firstItem="lHZ-0B-WMZ" firstAttribute="leading" secondItem="CWZ-ZH-Fr3" secondAttribute="leadingMargin" constant="96" id="vOw-Mq-YQv"/>
+                            <constraint firstItem="H54-8W-llh" firstAttribute="leading" secondItem="M4O-qV-365" secondAttribute="trailing" constant="8" id="wJn-fL-xpz"/>
+                            <constraint firstItem="ReU-ls-HIP" firstAttribute="top" secondItem="for-BY-keU" secondAttribute="bottom" constant="25" id="xcu-M8-pyw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mpe-PT-HdT"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="destinationField1" destination="M4O-qV-365" id="KtW-TF-vVH"/>
+                        <outlet property="destinationField2" destination="cDl-Zp-24W" id="ppA-5H-o6S"/>
+                        <outlet property="sourceField" destination="ReU-ls-HIP" id="nuw-pi-uAs"/>
+                        <outlet property="topMarginConstraint" destination="Hme-MM-hlV" id="54y-rx-mdX"/>
+                        <outletCollection property="enterButtonArray" destination="bIX-Vp-Yvh" collectionClass="NSMutableArray" id="syR-FP-0M8"/>
+                        <outletCollection property="enterButtonArray" destination="H54-8W-llh" collectionClass="NSMutableArray" id="gR1-FY-h23"/>
+                        <outletCollection property="enterButtonArray" destination="EZN-p1-pvm" collectionClass="NSMutableArray" id="PWQ-qU-uUK"/>
+                        <segue destination="SSP-JU-vow" kind="show" identifier="show_directions" id="zkh-lw-56I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95M-RF-GiM" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="280"/>
+        </scene>
+        <!--Procrastinator's Route-->
+        <scene sceneID="I9u-p0-qq0">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SSP-JU-vow" customClass="DirectionsViewController" customModule="ProcrastinatorsRevenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xMn-wj-guq"/>
+                        <viewControllerLayoutGuide type="bottom" id="xJY-24-tMC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oWe-1f-1wZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-pI-QSq">
+                                <rect key="frame" x="0.0" y="28" width="320" height="220"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="ReI-no-NRZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="SSP-JU-vow" id="LAc-NT-4RS"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Time: --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s21-B2-JHG">
+                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eDZ-t6-FX2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-I2-8Au" customClass="DirectionsTableView" customModule="ProcrastinatorsRevenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="256" width="320" height="264"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DirectionCell" id="4c1-Nu-cbB">
+                                        <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4c1-Nu-cbB" id="ZFd-VJ-7FZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.6322211714" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="s21-B2-JHG" firstAttribute="leading" secondItem="oWe-1f-1wZ" secondAttribute="leadingMargin" constant="-16" id="Cia-xe-vXt"/>
+                            <constraint firstItem="xD8-pI-QSq" firstAttribute="leading" secondItem="oWe-1f-1wZ" secondAttribute="leadingMargin" constant="-16" id="DsA-OF-fz3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s21-B2-JHG" secondAttribute="trailing" constant="-16" id="Ghh-do-CDX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xD8-pI-QSq" secondAttribute="trailing" constant="-16" id="Hix-vU-6zY"/>
+                            <constraint firstItem="s21-B2-JHG" firstAttribute="top" secondItem="vSn-I2-8Au" secondAttribute="bottom" constant="8" id="IqL-J7-nvh"/>
+                            <constraint firstItem="vSn-I2-8Au" firstAttribute="leading" secondItem="oWe-1f-1wZ" secondAttribute="leadingMargin" constant="-16" id="YCF-r7-i3r"/>
+                            <constraint firstItem="xJY-24-tMC" firstAttribute="top" secondItem="s21-B2-JHG" secondAttribute="bottom" id="evT-bE-4hT"/>
+                            <constraint firstAttribute="centerX" secondItem="xD8-pI-QSq" secondAttribute="centerX" id="gxz-x7-hGM"/>
+                            <constraint firstItem="vSn-I2-8Au" firstAttribute="top" secondItem="xD8-pI-QSq" secondAttribute="bottom" constant="8" id="l2e-Ma-ygn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vSn-I2-8Au" secondAttribute="trailing" constant="-16" id="mMi-Pg-3jP"/>
+                            <constraint firstItem="xD8-pI-QSq" firstAttribute="top" secondItem="xMn-wj-guq" secondAttribute="bottom" constant="8" id="pyK-GW-nDy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Procrastinator's Route" id="QM1-1V-juf"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="directionsTableView" destination="vSn-I2-8Au" id="suv-yq-kPu"/>
+                        <outlet property="mapView" destination="xD8-pI-QSq" id="xsA-uu-pkI"/>
+                        <outlet property="totalTimeLabel" destination="s21-B2-JHG" id="a3P-kw-P2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7m-fG-zot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="280"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock" width="259" height="217"/>
+        <image name="red_button" width="360" height="160"/>
+    </resources>
+</document>
