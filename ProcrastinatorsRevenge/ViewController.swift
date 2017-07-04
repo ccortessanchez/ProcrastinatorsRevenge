@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var directionsViewController = segue.destination as! DirectionsViewController
+        let directionsViewController = segue.destination as! DirectionsViewController
         directionsViewController.locationArray = locationsArray
     }
 

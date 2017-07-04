@@ -123,7 +123,7 @@ class DirectionsViewController: UIViewController {
     }
     
     func printTimeToLabel(time: TimeInterval) {
-        var timeString = time.formatted()
+        let timeString = time.formatted()
         totalTimeLabel.text = "Total time: \(timeString)"
     }
 }
