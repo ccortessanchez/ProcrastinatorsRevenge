@@ -78,6 +78,7 @@ class DirectionsViewController: UIViewController {
                     self.calculateSegmentsDirection(index: index+1, time: timeVar, routes: routesVar)
                 } else {
                     self.hideActivityIndicator()
+                    self.showRoute(routes: routesVar, time: timeVar)
                 }
                 
             }else if let _ = error {
@@ -91,6 +92,34 @@ class DirectionsViewController: UIViewController {
             }
         })
     }
+    
+    func showRoute(routes:[MKRoute], time: TimeInterval) {
+        var directionsArray = [(startingAddress: String, endingAddress: String, route: MKRoute)]()
+        var directionsArrayVar = [(startingAddress: String, endingAddress: String, route: MKRoute)]()
+        for i in 0..<routes.count {
+            plotPolyline(route: routes[i])
+            directionsArrayVar = [((locationArray[i].textField?.text!)!, endingAddress: (locationArray[i+1].textField?.text!)!, route: routes[i])]
+            directionsArray.append(contentsOf: directionsArrayVar)
+        }
+        displayDirections(directionsArray: directionsArray)
+    }
+    
+    func plotPolyline(route: MKRoute) {
+        mapView.add(route.polyline)
+        if mapView.overlays.count == 1 {
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        } else {
+            let polylineBoundingRect = MKMapRectUnion(mapView.visibleMapRect, route.polyline.boundingMapRect)
+            mapView.setVisibleMapRect(polylineBoundingRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        }
+    }
+    
+    func displayDirections(directionsArray: [(startingAddress: String, endingAddress: String, route: MKRoute)]) {
+        directionsTableView.directionsArray = directionsArray
+        directionsTableView.delegate = directionsTableView
+        directionsTableView.dataSource = directionsTableView
+        directionsTableView.reloadData()
+    }
 }
 
 extension DirectionsViewController: MKMapViewDelegate {
@@ -99,8 +128,14 @@ extension DirectionsViewController: MKMapViewDelegate {
     
     let polylineRenderer = MKPolylineRenderer(overlay: overlay)
     if (overlay is MKPolyline) {
-      polylineRenderer.strokeColor = UIColor.blue.withAlphaComponent(0.75)
-      polylineRenderer.lineWidth = 5
+        if mapView.overlays.count == 1 {
+            polylineRenderer.strokeColor = UIColor.blue.withAlphaComponent(0.75)
+        } else if mapView.overlays.count == 2 {
+            polylineRenderer.strokeColor = UIColor.green.withAlphaComponent(0.75)
+        } else if mapView.overlays.count == 3 {
+            polylineRenderer.strokeColor = UIColor.red.withAlphaComponent(0.75)
+        }
+        polylineRenderer.lineWidth = 5
     }
     return polylineRenderer
   }
