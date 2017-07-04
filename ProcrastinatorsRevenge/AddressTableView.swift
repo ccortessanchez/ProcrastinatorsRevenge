@@ -63,6 +63,12 @@ extension AddressTableView: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     removeFromSuperview()
+    if addresses.count > indexPath.row {
+        currentTextField.text = addresses[indexPath.row]
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: placemarkArray[indexPath.row].location!.coordinate, addressDictionary: placemarkArray[indexPath.row].addressDictionary as! [String:Any]?))
+        mainViewController.locationTuples[currentTextField.tag-1].mapItem = mapItem
+        sender.isSelected = true
+    }
   }
 }
 

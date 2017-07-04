@@ -34,7 +34,13 @@ class ViewController: UIViewController {
   
   var originalTopMargin: CGFloat!
   let locationManager = CLLocationManager()
-  var locationTuples: [(textField: UITextField?, mapItem: MKMapItem?)]!
+    var locationTuples: [(textField: UITextField?, mapItem: MKMapItem?)]!
+    
+    var locationsArray: [(textField: UITextField?, mapItem: MKMapItem?)] {
+        var filtered = locationTuples.filter({ $0.mapItem != nil })
+        filtered += [filtered.first!]
+        return filtered
+    }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -58,6 +64,20 @@ class ViewController: UIViewController {
     view.endEditing(true)
     performSegue(withIdentifier: "show_directions", sender: self)
   }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if locationTuples[0].mapItem == nil || (locationTuples[1].mapItem == nil && locationTuples[2].mapItem == nil) {
+            showAlert("Please enter a valid starting point and at least one destination")
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var directionsViewController = segue.destination as! DirectionsViewController
+        directionsViewController.locationArray = locationsArray
+    }
 
   @IBAction func addressEntered(_ sender: UIButton) {
     view.endEditing(true)
@@ -68,15 +88,17 @@ class ViewController: UIViewController {
             for placemark in placemarks {
                 addresses.append(self.formatAdressFromPlacemark(placemark: placemark))
             }
-            self.showAddressTable(addresses: addresses)
+            self.showAddressTable(addresses: addresses, textField: currentTextField!, placemarks: placemarks, sender: sender)
         } else {
-            
+            self.showAlert("Address not found")
         }
     })
   }
 
   @IBAction func swapFields(_ sender: AnyObject) {
-    
+    swap(&destinationField1.text, &destinationField2.text)
+    swap(&locationTuples[1].mapItem, &locationTuples[2].mapItem)
+    swap(&self.enterButtonArray.filter{$0.tag == 2}.first!.isSelected, &self.enterButtonArray.filter{$0.tag == 3}.first!.isSelected)
   }
   
   func showAlert(_ alertString: String) {
@@ -88,9 +110,13 @@ class ViewController: UIViewController {
     present(alert, animated: true, completion: nil)
   }
     
-    func showAddressTable(addresses: [String]) {
+    func showAddressTable(addresses: [String], textField: UITextField, placemarks: [CLPlacemark], sender: UIButton) {
         let addressTableView = AddressTableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
         addressTableView.addresses = addresses
+        addressTableView.currentTextField = textField
+        addressTableView.placemarkArray = placemarks
+        addressTableView.mainViewController = self
+        addressTableView.sender = sender
         addressTableView.delegate = addressTableView
         addressTableView.dataSource = addressTableView
         view.addSubview(addressTableView)
@@ -129,6 +155,8 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    enterButtonArray.filter{$0.tag == textField.tag}.first!.isSelected = false
+    locationTuples[textField.tag-1].mapItem = nil
     return true
   }
   
