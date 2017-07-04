@@ -102,6 +102,7 @@ class DirectionsViewController: UIViewController {
             directionsArray.append(contentsOf: directionsArrayVar)
         }
         displayDirections(directionsArray: directionsArray)
+        printTimeToLabel(time: time)
     }
     
     func plotPolyline(route: MKRoute) {
@@ -119,6 +120,11 @@ class DirectionsViewController: UIViewController {
         directionsTableView.delegate = directionsTableView
         directionsTableView.dataSource = directionsTableView
         directionsTableView.reloadData()
+    }
+    
+    func printTimeToLabel(time: TimeInterval) {
+        var timeString = time.formatted()
+        totalTimeLabel.text = "Total time: \(timeString)"
     }
 }
 
