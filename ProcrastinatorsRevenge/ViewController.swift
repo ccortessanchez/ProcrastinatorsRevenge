@@ -34,9 +34,11 @@ class ViewController: UIViewController {
   
   var originalTopMargin: CGFloat!
   let locationManager = CLLocationManager()
+  var locationTuples: [(textField: UITextField?, mapItem: MKMapItem?)]!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    locationTuples = [(sourceField, nil), (destinationField1, nil), (destinationField2, nil)]
     originalTopMargin = topMarginConstraint.constant
     
     locationManager.delegate = self
@@ -59,6 +61,18 @@ class ViewController: UIViewController {
 
   @IBAction func addressEntered(_ sender: UIButton) {
     view.endEditing(true)
+    let currentTextField = locationTuples[sender.tag-1].textField
+    CLGeocoder().geocodeAddressString((currentTextField?.text!)!, completionHandler: {(placemarks, error) -> Void in
+        if let placemarks = placemarks{
+            var addresses = [String]()
+            for placemark in placemarks {
+                addresses.append(self.formatAdressFromPlacemark(placemark: placemark))
+            }
+            self.showAddressTable(addresses: addresses)
+        } else {
+            
+        }
+    })
   }
 
   @IBAction func swapFields(_ sender: AnyObject) {
@@ -73,6 +87,14 @@ class ViewController: UIViewController {
     alert.addAction(okButton)
     present(alert, animated: true, completion: nil)
   }
+    
+    func showAddressTable(addresses: [String]) {
+        let addressTableView = AddressTableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
+        addressTableView.addresses = addresses
+        addressTableView.delegate = addressTableView
+        addressTableView.dataSource = addressTableView
+        view.addSubview(addressTableView)
+    }
   
   // The remaining methods handle the keyboard resignation/
   // move the view so that the first responders aren't hidden
@@ -98,6 +120,10 @@ class ViewController: UIViewController {
       self.view.layoutIfNeeded()
     })
   }
+    
+    func formatAdressFromPlacemark(placemark: CLPlacemark) -> String {
+        return(placemark.addressDictionary!["FormattedAddressLines"] as! [String]).joined(separator: ", ")
+    }
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -124,13 +150,16 @@ extension ViewController: UITextFieldDelegate {
 extension ViewController: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+    CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: {(placemarks, error) -> Void in
         if let placemarks = placemarks {
-            let placemark = plcaemarks[0]
+            let placemark = placemarks[0]
+            self.locationTuples[0].mapItem = MKMapItem(placemark:MKPlacemark(coordinate: placemark.location!.coordinate, addressDictionary: placemark.addressDictionary as! [String:AnyObject]?))
+            self.sourceField.text = self.formatAdressFromPlacemark(placemark: placemark)
+            self.enterButtonArray.filter{$0.tag == 1}.first!.isSelected = true
         }
     })
   }
-  
+    
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     print(error)
   }
